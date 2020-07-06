@@ -1,44 +1,46 @@
 "use strict";
 let userCountry = prompt("Введіть назву країни:");
-let message;
-let price;
 
 if (userCountry === null) {
-  console.log("Скасовано користувачем.");
+  console.log("Скасовано користувачем!");
 } else {
-  userCountry =
-    userCountry[0].toUpperCase() + userCountry.substring(1).toLowerCase();
-  const china = "Китай";
-  const chile = "Чилі";
-  const australia = "Австралія";
-  const india = "Індія";
-  const jamaica = "Ямайка";
+  const china = "китай";
+  const chile = "чилі";
+  const australia = "австралія";
+  const india = "індія";
+  const jamaica = "ямайка";
 
-  switch (userCountry) {
+  const priceChina = 100;
+  const priceChile = 250;
+  const priceAustralia = 170;
+  const priceIndia = 80;
+  const priceJamaica = 120;
+
+  switch (userCountry.toLowerCase()) {
     case china:
-      price = 100;
-      message = `Доставка в ${userCountry} буде коштувати ${price} кредитів.`;
-      console.log(message);
+      console.log(
+        `Доставка в ${userCountry} буде коштувати ${priceChina} кредитів.`
+      );
       break;
     case chile:
-      price = 250;
-      message = `Доставка в ${userCountry} буде коштувати ${price} кредитів.`;
-      console.log(message);
+      console.log(
+        `Доставка в ${userCountry} буде коштувати ${priceChile} кредитів.`
+      );
       break;
     case australia:
-      price = 170;
-      message = `Доставка в ${userCountry} буде коштувати ${price} кредитів.`;
-      console.log(message);
+      console.log(
+        `Доставка в ${userCountry} буде коштувати ${priceAustralia} кредитів.`
+      );
       break;
     case india:
-      price = 80;
-      message = `Доставка в ${userCountry} буде коштувати ${price} кредитів.`;
-      console.log(message);
+      console.log(
+        `Доставка в ${userCountry} буде коштувати ${priceIndia} кредитів.`
+      );
       break;
     case jamaica:
-      price = 120;
-      message = `Доставка в ${userCountry} буде коштувати ${price} кредитів.`;
-      console.log(message);
+      console.log(
+        `Доставка в ${userCountry} буде коштувати ${priceJamaica} кредитів.`
+      );
       break;
     default:
       alert("У вашій країні доставка недоступна");

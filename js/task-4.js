@@ -1,20 +1,19 @@
 "use strict";
 const credits = 23580;
 const pricePerDroid = 3000;
-let message;
-let numberDroid = prompt("Введіть кілкість дроїдів для покупки");
+const numberDroid = prompt("Введіть кілкість дроїдів для покупки");
+const totalPrice = numberDroid * pricePerDroid;
 
 if (numberDroid === null) {
-  message = "Скасовано користувачем!";
-} else if (numberDroid > 0) {
-  numberDroid = Number(numberDroid);
-
-  const totalPrice = numberDroid * pricePerDroid;
-  const result = credits - totalPrice;
-  message =
-    credits >= totalPrice
-      ? `Ви купили ${numberDroid} дроїдів, на рахунку залишилося ${result} кредитів.`
-      : "Недостатньо коштів на рахунку!";
+  console.log("Скасовано користувачем!");
+} else if (totalPrice > credits) {
+  console.log("Недостатньо коштів на рахунку!");
+} else if (totalPrice <= credits) {
+  console.log(
+    `Ви купили ${numberDroid} дроїдів, на рахунку залишилося ${
+      credits - totalPrice
+    } кредитів.`
+  );
+} else if (Number.isNaN(+numberDroid)) {
+  console.log("Введіть число, а не букви!");
 }
-
-console.log(message);
