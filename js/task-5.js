@@ -1,21 +1,20 @@
 "use strict";
-let userCountry = prompt("Введіть назву країни:");
+const userCountry = prompt("Введіть назву країни:");
+const china = "китай";
+const chile = "чилі";
+const australia = "австралія";
+const india = "індія";
+const jamaica = "ямайка";
+
+const priceChina = 100;
+const priceChile = 250;
+const priceAustralia = 170;
+const priceIndia = 80;
+const priceJamaica = 120;
 
 if (userCountry === null) {
   console.log("Скасовано користувачем!");
 } else {
-  const china = "китай";
-  const chile = "чилі";
-  const australia = "австралія";
-  const india = "індія";
-  const jamaica = "ямайка";
-
-  const priceChina = 100;
-  const priceChile = 250;
-  const priceAustralia = 170;
-  const priceIndia = 80;
-  const priceJamaica = 120;
-
   switch (userCountry.toLowerCase()) {
     case china:
       console.log(
